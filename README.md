@@ -1,10 +1,12 @@
+This Domoticz plugin was developed on a Raspberry Pi and may work on other platforms also.
+
 This plugin creates and updates 5 Custom Sensors for the next speeds : 
 
- - ping
- - uplink
- - downlink
- - upload file
- - download file
+ - ping             shows ping response
+ - uplink           shows the uplink speed
+ - downlink         shows the downlink speed
+ - upload file      shows how fast a single file can be uploaded
+ - download file    shows how fast a single file can be downloaded
 
 The plugin also creates a room with the name you enter for your hardware item.
 
@@ -14,21 +16,28 @@ Since this minute would cause a hanging Domoticz the plugin does not get the dat
 The plugin starts a detached process which gets the data and posts it back.
 To enable this posting of data please go in Domoticz to Setup > Settings > Local Networks > and add the IP address of your Domoticz host.
 
-To install the plugin you need to get the contents of the zip file speedtest.zip
+The detached process uses speedtest.py from https://github.com/sivel/speedtest-cli
+
+Before installing make sure that the requests module is installed :
+sudo apt-get install python3-requests
+( When already installed it will skip installation and explain it is already installed )
+
+To install the plugin you need to get the contents in your plugin folder :
 
 On a Raspberry Pi you could :
 
-Start a terminal and go to your plugins folder and the next command will download a zip file, unpack and remove the zipfile : 
+Start a terminal and go to your plugins folder and the next will get it for you into a speedtest folder : 
 
-    wget https://raw.githubusercontent.com/JackV2020/Domoticz-Speedtest/main/speedtest.zip && unzip speedtest.zip && rm speedtest.zip
+ ....../plugins$ git clone https://github.com/JackV2020/Domoticz-Speedtest.git speedtest
 
-Now to get it into Domoticz restart your domoticz like :
+later when you want to check for updates you go into the folder and issue git pull :
+
+ ....../plugins/speedtest$ git pull
+
+To get it into Domoticz restart your domoticz like :
 
     sudo systemctl restart domoticz
 
 After this you can add a device of the Type 'Jacks Speedtest'.
-
-When you do not like the Type name 'Jacks Speedtest' feel free to edit plugin.py and modify it before you actually add your hardware.
-
 
 Thanks for reading and enjoy.
