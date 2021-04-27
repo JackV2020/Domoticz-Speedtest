@@ -16,7 +16,7 @@ Since this minute would cause a hanging Domoticz the plugin does not get the dat
 The plugin starts a detached process which gets the data and posts it back.
 To enable this posting of data please go in Domoticz to Setup > Settings > Local Networks > and add the IP address of your Domoticz host.
 
-The detached process uses speedtest.py from https://github.com/sivel/speedtest-cli
+The detached process uses speedtest.py from https://github.com/sivel/speedtest-cli which is installed by this plugin for you.
 
 Before installing make sure that the requests module is installed :
 sudo apt-get install python3-requests
