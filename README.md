@@ -40,4 +40,9 @@ To get it into Domoticz restart your domoticz like :
 
 After this you can add a device of the Type 'Jacks Speedtest'.
 
+Notes :
+     Someone made the valid remark that speedtest.sh lines 41..45 contain the default http port number 8080.  
+     When your Domoticz uses a different port number please change that in the speedtest.sh script.
+
+
 Thanks for reading and enjoy.
