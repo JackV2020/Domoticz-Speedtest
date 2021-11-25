@@ -38,11 +38,11 @@ then
     echo "upload file   $speed_single_upload"
     echo "download file $speed_single_download"
 else
-    wget -q --delete-after "http://localhost:8080/json.htm?type=command&param=udevice&idx=$1&svalue=$speed_ping"
-    wget -q --delete-after "http://localhost:8080/json.htm?type=command&param=udevice&idx=$2&svalue=$speed_upload"
-    wget -q --delete-after "http://localhost:8080/json.htm?type=command&param=udevice&idx=$3&svalue=$speed_download"
-    wget -q --delete-after "http://localhost:8080/json.htm?type=command&param=udevice&idx=$4&svalue=$speed_single_upload"
-    wget -q --delete-after "http://localhost:8080/json.htm?type=command&param=udevice&idx=$5&svalue=$speed_single_download"
+    wget -q --delete-after "http://127.0.0.1:8080/json.htm?type=command&param=udevice&idx=$1&svalue=$speed_ping"
+    wget -q --delete-after "http://127.0.0.1:8080/json.htm?type=command&param=udevice&idx=$2&svalue=$speed_upload"
+    wget -q --delete-after "http://127.0.0.1:8080/json.htm?type=command&param=udevice&idx=$3&svalue=$speed_download"
+    wget -q --delete-after "http://127.0.0.1:8080/json.htm?type=command&param=udevice&idx=$4&svalue=$speed_single_upload"
+    wget -q --delete-after "http://127.0.0.1:8080/json.htm?type=command&param=udevice&idx=$5&svalue=$speed_single_download"
 fi
 }
 #
